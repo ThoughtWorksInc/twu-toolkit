@@ -1,0 +1,9 @@
+Dependencies:
+  googlecl - https://code.google.com/p/googlecl/
+
+Instructions:
+  1. In config.rb, set the calendar name to an existing calendar of yours.
+  2. Duplicate calendar-base.xls and name it calendar.xls
+  3. Run:
+    $ ruby twu-calendar.rb
+  4. Profit.
