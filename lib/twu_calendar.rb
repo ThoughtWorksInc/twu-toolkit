@@ -1,4 +1,4 @@
-require_relative 'config'
+require_relative '../config'
 require 'csv'
 
 class Event

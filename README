@@ -1,9 +1,18 @@
 Dependencies:
   googlecl - https://code.google.com/p/googlecl/
+  trello_cli - gem install trello_cli
 
 Instructions:
-  1. In config.rb, set the calendar name to an existing calendar of yours.
-  2. Duplicate calendar-base.xls and name it calendar.xls
-  3. Run:
-    $ ruby twu-calendar.rb
-  4. Profit.
+  For calendar:
+    1. In config.rb, set the calendar name to an existing calendar of yours.
+    2. Duplicate calendar-base.xls and name it calendar.xls, modify and save it as csv. Add the proper filename in config.rb
+    3. Run:
+      $ ./create_calendar.rb
+    4. Profit.
+
+  For trello
+    1. get api key and read-write member token. Follow instructions here
+      https://github.com/brettweavnet/trello_cli (readme section)
+    2. run with
+      $ TRELLO_DEVELOPER_PUBLIC_KEY=<your api key> TRELLO_MEMBER_TOKEN=<your member token> ./create_trello.rb
+    
