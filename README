@@ -13,6 +13,13 @@ Instructions:
   For trello
     1. get api key and read-write member token. Follow instructions here
       https://github.com/brettweavnet/trello_cli (readme section)
-    2. run with
-      $ TRELLO_DEVELOPER_PUBLIC_KEY=<your api key> TRELLO_MEMBER_TOKEN=<your member token> ./create_trello.rb
+    2. Add those as env variables
+      $ export TRELLO_DEVELOPER_PUBLIC_KEY=<trello api key>
+      $ export TRELLO_MEMBER_TOKEN=<trello member token>
+    3. Find out your trello board id and add it to config.rb
+      $ trello board list
+    4. Find out your trello TODO list in your board and add it to config.rb
+      $ trello list list -b'<your board id>'
+    5. finnaly run with
+      $ ./create_trello.rb
     
