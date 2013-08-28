@@ -23,7 +23,7 @@ class Event
   end
 
   def trello_name
-    "#{name} - #{presenters} due #{month} #{time}"
+    "#{name} - #{presenters} due #{month} #{day}"
   end
 
 end
