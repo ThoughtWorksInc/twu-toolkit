@@ -3,4 +3,4 @@
 require_relative 'lib/twu_calendar'
 
 events = parse_events
-create_calendar(events)
+events.each { |e| puts e.calendar_name }
