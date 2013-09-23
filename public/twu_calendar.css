@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 1.2em;
+  font-family: helvetica;
+}
+
+h1, h2, h3 {
+  padding: 20px 0 20px 30px;
+}
+
+body {
+  background-color: lightgray;
+}
+
+#content {
+  width: 1000px;
+  margin: 0 auto;
+  border: 1px solid gray;
+  background-color: white;
+  margin-top: 20px;
+  padding: 0 0 30px 0;
+}
+
+header {
+}
+
+#inner_request_authorization_panel {
+  margin: 0 auto;
+  width: 95%;
+  border: 1px solid lightgray;
+}
+
+section#request_access {
+  background-color: lightgreen;
+}
+
+section#request_access div{
+  text-align: center;
+}
+
+
+section#request_access a {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: darkblue;
+  padding: 15px;
+  margin: 15px 0 15px 0;
+  color: white;
+  text-decoration: none;
+}
+
+#enter_code {
+  display: none;
+  margin-bottom: 30px;
+}
+
+#enter_code div {
+  text-align: center;
+}
+
+input {
+  font-size: 1.3em;
+  padding: 3px 0px 3px 10px;
+}
+
+button {
+  border: 1px solid darkblue;
+  background-color: darkblue;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  font-size: 1.2em;
+}
+
+#create_calendar {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#create_calendar button {
+  margin-top: 50px;
+}
+
+#create_calendar div:last-child {
+  text-align: center;
+  padding-left: 0px;
+}
+
+.form_entry {
+  margin: 20px 0px 20px 0px;
+  padding-left: 40px;
+}
+
+.form_entry label {
+  display: inline-block;
+  width: 100px;
+}
+

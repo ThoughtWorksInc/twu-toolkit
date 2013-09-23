@@ -1,0 +1,17 @@
+<div id="inner_request_authorization_panel" >
+  <section id="request_access" />
+    <h2>you must grant our applications permissions</h2>
+    <div><a id='request_permission_link' href='<%= @oauth_url %>' target="_blank" >Grant Permission</a></div>
+  </section>
+
+  <div id='enter_code'>
+    <h3>enter the google permission code</h3>
+    <div>
+      <form id='permission_code' action='/grant_permission' method="post" >
+        <input name='code' type='text' placeholder="code" />
+        <button id='submit_permission_code' type='submit' >Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+

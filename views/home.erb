@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel='stylesheet' href='twu_calendar.css' />
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js" ></script>
+    <script src="twu_calendar.js"></script>
+  </head>
+
+  <body>
+    <div id="content">
+      <header>
+        <h1>twu calendar</h1>
+      </header>  
+
+      <% if !@msg.nil? %>
+        <div id="notice"><%= @msg %></div>
+      <% end %>
+
+      <% if session[:auth_code].nil? %>
+        <%= erb "request_permission".to_sym %>
+      <% end %>
+
+      <% if !session[:auth_code].nil? %>
+        <%= erb "create_calendar".to_sym %>
+      <% end %>
+    </div>
+  </body>
+
+</html>

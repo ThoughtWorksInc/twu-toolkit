@@ -1,4 +1,3 @@
-
 class Event
   attr_reader :month, :day, :time, :name, :session_link, :type
   def initialize(month, day, time, name, session_link, type) 
