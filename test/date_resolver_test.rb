@@ -22,6 +22,12 @@ class TestDateResolver < Test::Unit::TestCase
     assert_equal 'Monday', day_of_the_week
   end
 
+  def test_time_overlap_saturday_sunday
+    current_date, day_of_the_week = DateResolver.new.define_current_date('Sunday', 'Monday', Date.parse('2013-10-20'))
+    assert_equal Date.parse('2013-10-21'), current_date
+    assert_equal 'Monday', day_of_the_week
+  end
+
   def test_no_time_overlap
     current_date, day_of_the_week = DateResolver.new.define_current_date('Friday', 'Friday', Date.parse('2013-10-18'))
     assert_equal Date.parse('2013-10-18'), current_date
