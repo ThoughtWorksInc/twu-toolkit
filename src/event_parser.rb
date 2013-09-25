@@ -18,7 +18,6 @@ class EventParser
     events = []
     CSV.foreach(file, { :headers => true }) do |row|
       current_date, current_day_of_the_week = @date_resolver.define_current_date(current_day_of_the_week, row[0], current_date)
-      debugger
       events << @event_factory.create(current_date, row[1], row[2], row[3], row[4])
     end
     events

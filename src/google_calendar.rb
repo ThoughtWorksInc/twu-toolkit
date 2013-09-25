@@ -43,7 +43,6 @@ class GoogleCalendar
                           :parameters => { 'calendarId' => calendar_id },
                           :body => event.to_event_resource.to_json,
                           :headers => {'Content-Type' => 'application/json'})
-          puts result.data.inspect
         }
       end
     end
