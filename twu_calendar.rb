@@ -4,7 +4,10 @@ require './src/event'
 require './src/event_parser'
 require './src/config'
 require './src/google_calendar'
+require './src/date_resolver'
+require './src/event_factory'
 require 'debugger'
+require 'open-uri'
 
 enable :sessions
 set :session_secret, '&!@@#!jj'
@@ -21,15 +24,23 @@ post '/grant_permission' do
 end
 
 post '/create_calendar' do
-  debugger
-  begin
-    cal = GoogleCalendar.new(session[:auth_code])
-    cal.create_calendar(params[:calendar_name])
-  rescue Exception => e
-    puts e.inspect
-    session[:auth_code] = nil
-  ensure
-    redirect to("/")
-  end
+  calendar_csv = params['csv_calendar'][:tempfile]
+  calendar_name = params[:calendar_name]
+  start_date = params[:calendar_start_date]
+  auth_code = session[:auth_code]
+  
+  events = EventParser.new.parse_events(calendar_csv, start_date)
 
+  begin
+    cal = GoogleCalendar.new(auth_code)
+    calendar_id = cal.create_calendar(calendar_name)
+    cal.create_events(events, calendar_id)
+    message = 'Calendar created succesfully'
+  rescue Exception => e
+    puts e
+    session[:auth_code] = nil
+    message = 'Autorization failed, please grant authorization one more time'
+  ensure
+    redirect to("/?msg=#{URI.encode(message)}")
+  end
 end

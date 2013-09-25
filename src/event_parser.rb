@@ -1,12 +1,28 @@
 require 'csv'
+require 'date'
 
 class EventParser
-  def self.parse_events
+  def initialize
+    @event_factory = EventFactory.new
+    @date_resolver = DateResolver.new
+  end
+
+  def parse_events file, starting_date
+    current_date = Date.parse(starting_date)
+    create_events(file, current_date)
+  end
+  
+  private
+  def create_events file, current_date
+    current_day_of_the_week = 'Friday'
     events = []
-    CSV.foreach(FILE, { :headers => true }) do |row|
-      events << Event.new(row[1], row[2], row[3], row[4], row[5], row[6])
+    CSV.foreach(file, { :headers => true }) do |row|
+      current_date, current_day_of_the_week = @date_resolver.define_current_date(current_day_of_the_week, row[0], current_date)
+      debugger
+      events << @event_factory.create(current_date, row[1], row[2], row[3], row[4])
     end
     events
   end
+
 end
 

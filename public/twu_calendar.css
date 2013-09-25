@@ -63,7 +63,7 @@ section#request_access a {
 }
 
 input {
-  font-size: 1.3em;
+  font-size: 0.9em;
   padding: 3px 0px 3px 10px;
 }
 
@@ -97,6 +97,6 @@ button {
 
 .form_entry label {
   display: inline-block;
-  width: 100px;
+  width: 160px;
 }
 
