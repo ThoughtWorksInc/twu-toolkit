@@ -9,10 +9,9 @@ require './src/event_factory'
 require 'debugger'
 require 'open-uri'
 
-enable :sessions
-set :session_secret, '&!@@#!jj'
 
 class TWUCalendar < Sinatra::Base
+  use Rack::Session::Cookie
   get '/' do
     @oauth_url = GoogleCalendar::OATH_URL
     @message = params[:msg] if !params[:msg] == "" && !params[:msg].nil?
