@@ -1,0 +1,5 @@
+<% if session[:auth_code].nil? then %>
+  <%= erb "calendar/request_permission".to_sym %>
+<% else %>
+  <%= erb "calendar/create_calendar".to_sym %>
+<% end %>

@@ -12,6 +12,14 @@ h1, h2, h3 {
   padding: 20px 0 20px 30px;
 }
 
+ul {
+  margin-left: 150px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
 body {
   background-color: lightgray;
 }
@@ -23,9 +31,6 @@ body {
   background-color: white;
   margin-top: 20px;
   padding: 0 0 30px 0;
-}
-
-header {
 }
 
 #inner_request_authorization_panel {
@@ -41,7 +46,6 @@ section#request_access {
 section#request_access div{
   text-align: center;
 }
-
 
 section#request_access a {
   display: inline-block;

@@ -9,13 +9,22 @@ require './src/event_factory'
 require 'debugger'
 require 'open-uri'
 
-
 class TWUCalendar < Sinatra::Base
+  
   use Rack::Session::Cookie
+
   get '/' do
     @oauth_url = GoogleCalendar::OATH_URL
     @message = params[:msg] if !params[:msg] == "" && !params[:msg].nil?
     erb :home
+  end
+
+  get '/calendar' do
+    erb "/calendar/calendar".to_sym
+  end
+
+  get '/trello' do
+    erb "/trello/trello".to_sym
   end
 
   post '/grant_permission' do
@@ -44,4 +53,5 @@ class TWUCalendar < Sinatra::Base
       redirect to("/?msg=#{URI.encode(message)}")
     end
   end
+
 end
