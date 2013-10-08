@@ -32,7 +32,7 @@ class TWUCalendar < Sinatra::Base
       :access_token_url => "https://trello.com/1/OAuthGetAccessToken",
       :authorize_url => "https://trello.com/1/OAuthAuthorizeToken"
     })
-    request_token = consumer.get_request_token(:oauth_callback => 'http://localhost:9393/register_trello_permissions')
+    request_token = consumer.get_request_token(:oauth_callback => ENV['TRELLO_REDIRECT_URL'])
     session['trello_request_token'] = request_token
     redirect to(request_token.authorize_url + "&scope=read,write")
   end
