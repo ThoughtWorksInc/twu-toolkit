@@ -1,2 +1,6 @@
 <h2>Create Trello Board</h2>
-<h3>Coming soon!</h3>
+<% if session['trello_auth'].nil? then %>
+  <%= erb "trello/request_permission".to_sym %>
+<% else %>
+  <%= erb "trello/create_trello_board".to_sym %>
+<% end %>

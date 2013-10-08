@@ -1,0 +1,21 @@
+<section id='create_trello' >
+  <h2>create a new trello board</h2>
+  <form action='/create_trello' method='post' enctype='multipart/form-data' >
+    <div class='form_entry' >
+      <label for='calendar_name'>Name</label>
+      <input id='calendar_name' placeholder='Trello board name' name='trello_board_name' type='text' />
+    </div>
+    <div class='form_entry' >
+      <label for='calendar_start_date'>TWU Start Date</label>
+      <input id='calendar_start_date' name='calendar_start_date' type='date' />
+    </div>
+    <div class='form_entry' >
+      <label for='csv_calendar'>CSV calendar</label>
+      <input id='csv_calendar' type='file' name='csv_calendar' />
+    </div>
+    <div class='form_entry' >
+      <button type='submit'>Create Trello Board</button>
+    </div>
+  </form>
+</section>
+
