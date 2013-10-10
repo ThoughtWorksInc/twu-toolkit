@@ -1,4 +1,4 @@
-source "https://rubygems.com"
+source 'http://rubygems.org'
 
 gem 'sinatra'
 
