@@ -48,7 +48,6 @@ class TWUCalendar < Sinatra::Base
     auth_code = session[:auth_code]
 
     events = EventParser.new.parse_events(calendar_csv, start_date)
-    debugger
 
     begin
       cal = GoogleCalendar.new(auth_code)

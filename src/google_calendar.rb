@@ -18,16 +18,11 @@ class GoogleCalendar
 
     def create_calendar calendar_name
       result = nil
-      begin
       ensure_authorized {
         result = @client.execute(:api_method => @calendar_api.calendars.insert,
                                  :body =>  { 'summary' => calendar_name }.to_json,
                                  :headers => {'Content-Type' => 'application/json'})
       }
-      rescue Exception => e
-        debugger
-        puts e
-      end
       result.data.id
     end
 
