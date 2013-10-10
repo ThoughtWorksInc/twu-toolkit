@@ -1,6 +1,4 @@
-require 'test/unit'
-require '../src/date_resolver'
-require 'date'
+require 'helper_test'
 
 class TestDateResolver < Test::Unit::TestCase
 
