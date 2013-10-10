@@ -104,3 +104,16 @@ button {
   width: 160px;
 }
 
+.notice {
+  padding: 25px 0px 25px 25px;
+  color: black;
+  font-size: 22px;
+  background-color: lightgreen;
+}
+
+.warning {
+  background-color: lightred !important;
+}
+
+
+

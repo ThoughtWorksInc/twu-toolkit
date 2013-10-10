@@ -3,15 +3,17 @@
 
   <head>
     <link rel='stylesheet' href='twu_calendar.css' />
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js" ></script>
-    <script src="twu_calendar.js"></script>
   </head>
 
   <body>
-
-    <% if !@message.nil? %>
-      <div id="notice"><%= @message %></div>
+    <% if !flash[:notice].nil? %>
+      <div class="notice">! <%= flash[:notice] %></div>
     <% end %>
+
+    <% if !flash[:warning].nil? %>
+      <div class="notice warning">! <%= flash[:warning] %></div>
+    <% end %>
+
 
     <div id="content">
       <header>

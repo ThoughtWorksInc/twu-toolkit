@@ -4,6 +4,8 @@ gem 'sinatra'
 
 gem 'rack-timeout'
 
+gem 'rack-flash3'
+
 gem 'oauth'
 gem 'oauth2'
 

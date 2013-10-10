@@ -67,6 +67,8 @@ GEM
       multi_xml (~> 0.5)
       rack (~> 1.2)
     rack (1.5.2)
+    rack-flash3 (1.0.5)
+      rack
     rack-protection (1.5.0)
       rack
     rack-test (0.6.2)
@@ -108,6 +110,7 @@ DEPENDENCIES
   google-api-client
   oauth
   oauth2
+  rack-flash3
   rack-timeout
   ruby-trello
   shotgun

@@ -11,6 +11,7 @@ require 'open-uri'
 require 'oauth'
 require 'oauth2'
 require 'trello'
+require 'rack-flash'
 require 'authorization/trello'
 require 'authorization/google'
 
@@ -20,6 +21,7 @@ class TWUCalendar < Sinatra::Base
   include Authorization::Google
 
   use Rack::Session::Cookie
+  use Rack::Flash
 
   get '/' do
     erb :home
@@ -39,6 +41,8 @@ class TWUCalendar < Sinatra::Base
     end
     events = EventParser.new.parse_events(calendar_csv, start_date)
     TWUTrello.create(events, trello_board_name)
+    flash[:notice] = "Calendar succesfully create"
+    redirect to("/")
   end
 
   post '/create_calendar' do
@@ -50,15 +54,20 @@ class TWUCalendar < Sinatra::Base
     events = EventParser.new.parse_events(calendar_csv, start_date)
 
     begin
+=begin
       cal = GoogleCalendar.new(auth_code)
       calendar_id = cal.create_calendar(calendar_name)
       cal.create_events(events, calendar_id)
+=end
+      throw Exception.new
+      flash[:notice] = "Calendar succesfully create"
     rescue Exception => e
       puts e
       session[:auth_code] = nil
-    ensure
+      flash[:warning] = "Google grants expired. Please grant permissions one more time."
       redirect to("/calendar")
     end
+    redirect to("/")
   end
 
   get '/calendar' do
