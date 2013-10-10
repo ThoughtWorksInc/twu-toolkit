@@ -1,4 +1,4 @@
-require 'helper_test'
+require 'test_helper'
 
 class TestEventFactory < Test::Unit::TestCase
 
