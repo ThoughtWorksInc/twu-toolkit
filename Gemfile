@@ -1,11 +1,18 @@
-source :rubygems
+source "https://rubygems.com"
+
+gem 'sinatra'
+
+gem 'oauth'
 
 gem 'google-api-client'
-gem 'rest-client'
-gem 'oauth'
-gem 'shotgun'
-gem 'sinatra'
-gem 'shotgun'
-gem 'debugger'
-gem 'activerecord'
 gem 'ruby-trello'
+
+group :test do
+  gem 'capybara'
+  gem 'debugger'
+end
+
+group :development do
+  gem 'shotgun'
+end
+
