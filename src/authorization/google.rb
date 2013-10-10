@@ -12,7 +12,7 @@ module Authorization
         client.authorization.client_id = ENV['TWU_CALENDAR_OAUTH2_CLIENT_ID']
         client.authorization.client_secret = ENV['TWU_CALENDAR_OAUTH2_CLIENT_SECRET']
         client.authorization.scope = 'https://www.googleapis.com/auth/calendar'
-        client.authorization.redirect_uri = 'http://localhost:9393/google_register_permissions'
+        client.authorization.redirect_uri = ENV['TWU_CALENDAR_OAUTH2_REDIRECT_URL']
 
         redirect client.authorization.authorization_uri.to_s, 303
       end
