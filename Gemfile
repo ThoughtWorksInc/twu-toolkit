@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'sinatra'
 
 gem 'oauth'
+gem 'oauth2'
 
 gem 'google-api-client'
 gem 'ruby-trello'
