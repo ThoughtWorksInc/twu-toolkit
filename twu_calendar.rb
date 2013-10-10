@@ -54,12 +54,9 @@ class TWUCalendar < Sinatra::Base
     events = EventParser.new.parse_events(calendar_csv, start_date)
 
     begin
-=begin
       cal = GoogleCalendar.new(auth_code)
       calendar_id = cal.create_calendar(calendar_name)
       cal.create_events(events, calendar_id)
-=end
-      throw Exception.new
       flash[:notice] = "Calendar succesfully create"
     rescue Exception => e
       puts e
