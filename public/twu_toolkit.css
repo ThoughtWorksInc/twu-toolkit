@@ -71,7 +71,7 @@ input {
   padding: 3px 0px 3px 10px;
 }
 
-button {
+input[type=submit] {
   border: 1px solid darkblue;
   background-color: darkblue;
   border-radius: 5px;
@@ -115,5 +115,12 @@ button {
   background-color: lightred !important;
 }
 
+.button_loading {
+  background: url('loading.gif') no-repeat darkblue;
+  width: 280px;
+  background-position: 10px;
+  text-align: right;
+  opacity: 0.4;
+}
 
 
