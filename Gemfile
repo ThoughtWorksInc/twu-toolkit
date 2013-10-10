@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 
+gem 'rack-timeout'
+
 gem 'oauth'
 gem 'oauth2'
 

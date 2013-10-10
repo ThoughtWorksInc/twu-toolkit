@@ -71,6 +71,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rack-timeout (0.0.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     ruby-trello (1.0.4)
@@ -107,6 +108,7 @@ DEPENDENCIES
   google-api-client
   oauth
   oauth2
+  rack-timeout
   ruby-trello
   shotgun
   sinatra
