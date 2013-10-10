@@ -8,9 +8,4 @@ end
 
 task :default => :unit
 
-Rake::TestTask.new(:functional) do |t|
-  t.libs << "test-functional"
-  t.verbose = true
-end
-
 
