@@ -74,7 +74,6 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rack-timeout (0.0.4)
     raindrops (0.12.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -117,7 +116,6 @@ DEPENDENCIES
   oauth
   oauth2
   rack-flash3
-  rack-timeout
   ruby-trello
   shotgun
   sinatra
