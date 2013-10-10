@@ -8,7 +8,7 @@ class GoogleCalendar
       @client.authorization.client_id = ENV['TWU_CALENDAR_OAUTH2_CLIENT_ID']
       @client.authorization.client_secret = ENV['TWU_CALENDAR_OAUTH2_CLIENT_SECRET']
       @client.authorization.scope = 'https://www.googleapis.com/auth/calendar'
-      @client.authorization.redirect_uri = 'http://localhost:9393/google_register_permissions'
+      @client.authorization.redirect_uri = ENV['TWU_CALENDAR_OAUTH2_REDIRECT_URL']
 
       @client.authorization.code = auth_code
       @client.authorization.fetch_access_token!
