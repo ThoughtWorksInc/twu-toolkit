@@ -55,7 +55,7 @@ aside {
   border: solid lightgray;
   border-width: 0 1px 0 0;
   display: inline-block;
-  height: 800px;
+  height: 640px;
   padding: 10px 40px 0 20px;
 }
 
@@ -75,8 +75,37 @@ main {
   padding: 10px 0px 0px 20px;
 }
 
-h1 {
-  font-size: 1.4em;
+h1, h2 {
   font-weight: normal;
+  margin-bottom: 10px;
 }
 
+h1 { font-size: 1.4em; }
+h2 { font-size: 1.3em; }
+
+.form_entry label {
+  width: 10em;
+  display: inline-block;
+}
+
+.form_entry {
+  margin-bottom: 10px;
+}
+
+.form_entry input {
+  width: 15em;
+}
+
+.form_entry input[type=text] {
+  padding: 3px;
+}
+
+.form_entry input[type=submit] {
+  background-color: darkcyan;
+  border: none;
+  color: honeydew;
+  font-size: 1.1em;
+  padding: 6px 10px;
+  width: auto;
+  border-radius: 2px;
+}
