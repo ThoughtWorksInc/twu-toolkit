@@ -1,126 +1,82 @@
+/* TWU Home */
 * {
-  margin: 0;
   padding: 0;
-}
-
-html {
-  font-size: 1.2em;
+  margin: 0;
   font-family: helvetica;
-}
-
-h1, h2, h3 {
-  padding: 20px 0 20px 30px;
-}
-
-ul {
-  margin-left: 150px;
-}
-
-ul li {
-  margin-bottom: 10px;
+  font-size: 0.98em;
 }
 
 body {
-  background-color: lightgray;
+  background-color: honeydew;
 }
 
-#content {
-  width: 1000px;
-  margin: 0 auto;
-  border: 1px solid gray;
-  background-color: white;
-  margin-top: 20px;
-  padding: 0 0 30px 0;
+em {
+  color: darkcyan;
+  font-style: normal;
 }
 
-#inner_request_authorization_panel {
-  margin: 0 auto;
-  width: 95%;
-  border: 1px solid lightgray;
-}
-
-section#request_access {
-  background-color: lightgreen;
-}
-
-section#request_access div{
-  text-align: center;
-}
-
-section#request_access a {
+#welcome_user {
   display: inline-block;
-  border-radius: 5px;
-  background-color: darkblue;
-  padding: 15px;
-  margin: 15px 0 15px 0;
-  color: white;
+  position: relative;
+  top: 1.2em;
+  left: 1em;
+}
+
+header {
+  border: solid lightgray;
+  border-width: 0 0 1px 0;
+  margin: 0 5px 5px 5px;
+  display: block;
+  min-height: 2.8em;
+  text-align: left;
+}
+
+nav ul {
+  float: right;
+  padding: 10px 10px 0 0;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline;
+}
+
+nav ul embed {
+  width: 32px;
+  height: 32px;
+}
+
+nav svg {
+  fill: lightgray;
+}
+
+aside {
+  clear: both;
+  border: solid lightgray;
+  border-width: 0 1px 0 0;
+  display: inline-block;
+  height: 800px;
+  padding: 10px 40px 0 20px;
+}
+
+aside li {
+  list-style-type: circle;
+  margin: 0 0 5px 15px;
+}
+
+aside a {
   text-decoration: none;
+  color: darkcyan;
 }
 
-#enter_code {
-  display: none;
-  margin-bottom: 30px;
-}
-
-#enter_code div {
-  text-align: center;
-}
-
-input {
-  font-size: 0.9em;
-  padding: 3px 0px 3px 10px;
-}
-
-input[type=submit] {
-  border: 1px solid darkblue;
-  background-color: darkblue;
-  border-radius: 5px;
-  padding: 10px;
-  color: white;
-  font-size: 1.2em;
-}
-
-#create_calendar {
-  width: 90%;
-  margin: 0 auto;
-}
-
-#create_calendar button {
-  margin-top: 50px;
-}
-
-#create_calendar div:last-child {
-  text-align: center;
-  padding-left: 0px;
-}
-
-.form_entry {
-  margin: 20px 0px 20px 0px;
-  padding-left: 40px;
-}
-
-.form_entry label {
+main {
   display: inline-block;
-  width: 160px;
+  vertical-align: top;
+  padding: 10px 0px 0px 20px;
 }
 
-.notice {
-  padding: 25px 0px 25px 25px;
-  color: black;
-  font-size: 22px;
-  background-color: lightgreen;
+h1 {
+  font-size: 1.4em;
+  font-weight: normal;
 }
-
-.warning {
-  background-color: lightred !important;
-}
-
-.button_loading {
-  background: url('loading.gif') no-repeat darkblue;
-  width: 280px;
-  background-position: 10px;
-  text-align: right;
-  opacity: 0.4;
-}
-
 

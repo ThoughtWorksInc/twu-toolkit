@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <link rel='stylesheet' href='twu_toolkit.css' />
-
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="twu_toolkit.js"></script>
+    <link rel="stylesheet" href="twu_toolkit.css" />
   </head>
-
   <body>
-    <% if !flash[:notice].nil? %>
+     <% if !flash[:notice].nil? %>
       <div class="notice">! <%= flash[:notice] %></div>
     <% end %>
 
@@ -17,13 +12,48 @@
       <div class="notice warning">! <%= flash[:warning] %></div>
     <% end %>
 
+   <header>
+      <nav>
+        <span id="welcome_user" >Welcome, <em>Beloved User :)</em></span>
+        <!-- for the future, navigation buttons 
+        <ul>
+          <li>
+            <embed src="img/config.svg" type="image/svg+xml" ></embed>
+          </li>
+          <li>
+            <embed src="img/logout.svg" type="image/svg+xml" ></embed>
+          </li>
+          -->
+        </ul>
+      </nav>
+    </header>
 
-    <div id="content">
-      <header>
-        <h1>twu toolkit</h1>
-      </header>  
+    <aside>
+      <ul>
+        <li>
+          <a href="/calendar" >Calendar</a>
+        </li>
+        <li>
+          <a href="/trello" >Trello</a>
+        </li>
+      </ul>
+    </aside>
 
-      <%= yield %>
+    <main>
+        <%= yield %>
+    </main>
+
+  </body>
+</html>
+<!DOCTYPE html>
+<html>
+
+  <head>
+ </head>
+
+  <body>
+      <div id="main">
+      </div>
 
     </div>
   </body>
