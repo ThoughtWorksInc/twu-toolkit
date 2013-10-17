@@ -72,7 +72,7 @@ aside a {
 main {
   display: inline-block;
   vertical-align: top;
-  padding: 10px 0px 0px 20px;
+  padding: 10px 10px 0px 20px;
 }
 
 h1, h2 {
@@ -93,18 +93,14 @@ h2 { font-size: 1.3em; }
 }
 
 .form_entry input {
-  width: 15em;
-}
-
-.form_entry input[type=text], input[type=date] {
   padding: 3px;
+  width: 15em;
 }
 
 .form_entry input[type=submit] {
   background-color: darkcyan;
   border: none;
   color: honeydew;
-  font-size: 1.1em;
   padding: 10px 10px;
   width: auto;
   border-radius: 2px;
@@ -119,4 +115,21 @@ h2 { font-size: 1.3em; }
   background-position: 10px;
   text-align: right;
   opacity: 0.4;
+}
+
+@media (max-width: 540px) {
+  aside, main {
+    display: block;
+  }
+  aside {
+    height: auto;
+    border: solid lightgray;
+    border-width: 0 0 1px 0;
+    margin: 0px 5px;
+    padding: 10px;
+  }
+  .form_entry input[type=submit] {
+    float: none;
+    width: 100%;
+  }
 }
