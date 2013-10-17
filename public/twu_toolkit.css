@@ -108,6 +108,8 @@ h2 { font-size: 1.3em; }
   padding: 10px 10px;
   width: auto;
   border-radius: 2px;
+  float: right;
+  margin-top: 10px;
 }
 
 .button_loading {
