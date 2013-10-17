@@ -20,7 +20,7 @@ class TWUCalendar < Sinatra::Base
   include Authorization::Trello
   include Authorization::Google
 
-  use Rack::Session::Cookie
+  use Rack::Session::Cookie, :secret => '123211'
   use Rack::Flash
 
   get '/' do
