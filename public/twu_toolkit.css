@@ -105,7 +105,16 @@ h2 { font-size: 1.3em; }
   border: none;
   color: honeydew;
   font-size: 1.1em;
-  padding: 6px 10px;
+  padding: 10px 10px;
   width: auto;
   border-radius: 2px;
+}
+
+.button_loading {
+  background-image: url('/loading.gif');
+  background-repeat: no-repeat;
+  width: 200px !important;
+  background-position: 10px;
+  text-align: right;
+  opacity: 0.4;
 }
