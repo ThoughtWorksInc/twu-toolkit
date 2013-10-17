@@ -132,4 +132,8 @@ h2 { font-size: 1.3em; }
     float: none;
     width: 100%;
   }
+  .button_loading {
+    width: 100% !important;
+    text-align: center;
+  }
 }
