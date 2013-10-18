@@ -14,7 +14,7 @@ gem 'unicorn'
 
 group :test do
   gem 'capybara'
-  gem 'debugger'
+  gem 'byebug'
 end
 
 group :development do
