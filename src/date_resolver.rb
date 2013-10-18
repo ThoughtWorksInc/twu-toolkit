@@ -6,7 +6,7 @@ class DateResolver
       current_date = current_date.next_day(day_offset)
       current_day_of_the_week = next_day_of_the_week 
     end
-    [current_date, current_day_of_the_week]
+    [current_date, current_day_of_the_week.strip.capitalize]
   end
 
   private
@@ -15,9 +15,10 @@ class DateResolver
   end
 
   def calculate_day_offset(current_day_of_the_week, next_day_of_the_week)
-    if next_day_of_the_week == 'Monday' then
-      return 3 if current_day_of_the_week == 'Friday' 
-      return 2 if current_day_of_the_week == 'Saturday' 
+    current_day, next_day  = current_day_of_the_week.downcase.strip, next_day_of_the_week.downcase.strip
+    if next_day == 'monday' then
+      return 3 if current_day == 'friday' 
+      return 2 if current_day == 'saturday' 
     end
     return 1
   end

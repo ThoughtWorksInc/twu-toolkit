@@ -38,4 +38,17 @@ class TestDateResolver < Test::Unit::TestCase
     assert_equal 'Tuesday', day_of_the_week
   end
 
+  def test_should_support_spaces
+    current_date, day_of_the_week = DateResolver.new.define_current_date('Saturday ', 'Monday', Date.parse('2013-10-26'))
+    assert_equal Date.parse('2013-10-28'), current_date
+    assert_equal 'Monday', day_of_the_week
+  end
+
+  def test_should_support_lowercase
+    current_date, day_of_the_week = DateResolver.new.define_current_date('saturday ', 'monday', Date.parse('2013-10-26'))
+    assert_equal Date.parse('2013-10-28'), current_date
+    assert_equal 'Monday', day_of_the_week
+  end
+
+
 end
