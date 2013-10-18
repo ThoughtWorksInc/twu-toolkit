@@ -1,2 +1,5 @@
 - Add validations
-- open uri encode issue in heroku (maybe ruby version)
+- add workers
+- notice style
+- filter trello board only by sessions
+- fix calendar bug
