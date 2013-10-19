@@ -1,5 +1,13 @@
 <% if session[:auth_code].nil? then %>
+
   <%= erb "calendar/request_permission".to_sym %>
+
 <% else %>
-  <%= erb "calendar/create_calendar".to_sym %>
+
+  <% if !@calendar_data.nil? && @calendar_data.has_errors? %>
+    <%= erb "calendar/create_calendar".to_sym, :locals => { :errors => @calendar_data.errors} %>
+  <% else %>
+    <%= erb "calendar/create_calendar".to_sym, :locals => { :errors => {}} %>
+  <% end %>
+
 <% end %>
