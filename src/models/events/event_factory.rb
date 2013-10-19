@@ -1,3 +1,5 @@
+require 'models/events/event'
+
 class EventFactory
   INDIAN_UTC_TIMEZONE = "+5:30"
   def create date, time, name, link, type

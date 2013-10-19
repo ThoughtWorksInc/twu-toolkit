@@ -1,6 +1,6 @@
 require 'google/api_client'
 
-class GoogleCalendar
+class GoogleCalendarService
 
     def initialize(auth_code)
       @client = Google::APIClient.new

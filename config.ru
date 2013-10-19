@@ -1,5 +1,5 @@
 $:.unshift('src')
 
-require File.expand_path('twu_calendar')
+require File.expand_path('src/twu_calendar')
 
 run TWUCalendar

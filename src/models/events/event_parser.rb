@@ -1,6 +1,9 @@
 require 'csv'
 require 'date'
 
+require 'models/events/event_factory'
+require 'models/events/utils/date_resolver'
+
 class EventParser
   def initialize
     @event_factory = EventFactory.new

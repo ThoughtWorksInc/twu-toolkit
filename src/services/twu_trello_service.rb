@@ -1,4 +1,4 @@
-class TWUTrello
+class TWUTrelloService
 
   def self.create events, trello_board_name
     board = Trello::Board.create(:name => trello_board_name)
