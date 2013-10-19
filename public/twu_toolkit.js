@@ -5,4 +5,8 @@ $(function () {
     button.attr('disabled', 'disabled'); 
     button.parent().parent().submit();
   });
+
+  var notice = $(".notice");
+  notice && notice.slideDown();
+
 });
