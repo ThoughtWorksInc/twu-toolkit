@@ -12,6 +12,8 @@ class TWUCalendar < Sinatra::Base
   use Rack::Session::Cookie, :secret => '123211'
   use Rack::Flash
 
+  set :logging, true
+
   Dir["src/controllers/**/*.rb"].each { |f| require File.expand_path(f) }
   
   helpers Sinatra::FormHelpers
