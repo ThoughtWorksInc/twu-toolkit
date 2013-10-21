@@ -1,25 +1,10 @@
-Dependencies:
-  googlecl - https://code.google.com/p/googlecl/
-  trello_cli - gem install trello_cli
+This app is a collection of tools to automate admin tasks for TWU
 
-Instructions:
-  For calendar:
-    1. In config.rb, set the calendar name to an existing calendar of yours.
-    2. Duplicate calendar-base.xls and name it calendar.xls, modify and save it as csv. Add the proper filename in config.rb
-    3. Run:
-      $ ./create_calendar.rb
-    4. Profit.
-
-  For trello
-    1. get api key and read-write member token. Follow instructions here
-      https://github.com/brettweavnet/trello_cli (readme section)
-    2. Add those as env variables
-      $ export TRELLO_DEVELOPER_PUBLIC_KEY=<trello api key>
-      $ export TRELLO_MEMBER_TOKEN=<trello member token>
-    3. Find out your trello board id and add it to config.rb
-      $ trello board list
-    4. Find out your trello TODO list in your board and add it to config.rb
-      $ trello list list -b'<your board id>'
-    5. finnaly run with
-      $ ./create_trello.rb
+For now, what is in is:
+  - Create TWU calendar
+  - Create TWU trello boards 
     
+This project is in www.snap-ci.com and heroku
+
+
+
