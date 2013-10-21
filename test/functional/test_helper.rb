@@ -7,5 +7,3 @@ require 'test/unit'
 require 'base_test'
 
 require 'mocks/google_api_mock'
-
-Capybara.current_driver = :selenium
