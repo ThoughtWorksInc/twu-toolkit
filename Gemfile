@@ -15,6 +15,7 @@ gem 'unicorn'
 group :test do
   gem 'capybara'
   gem 'byebug'
+  gem 'selenium-webdriver'
 end
 
 group :development do
