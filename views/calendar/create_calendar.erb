@@ -5,20 +5,17 @@
 
     <div class='form_entry' >
       <label for='calendar_name'>Name</label>
-      <input id='calendar_name' placeholder='TWU calendar' name='calendar_name' type='text' />
-      <%= field_error :calendar_name, errors %>
+      <input id='calendar_name' placeholder='TWU calendar' name='calendar_name' type='text' required/>
     </div>
     
     <div class='form_entry' >
       <label for='calendar_start_date'>TWU Start Date</label>
-      <input id='calendar_start_date' name='calendar_start_date' type='date' />
-      <%= field_error :start_date, errors %>
+      <input id='calendar_start_date' name='calendar_start_date' type='date' required/>
     </div>
 
     <div class='form_entry' >
       <label for='calendar_csv'>CSV calendar</label>
-      <input id='calendar_csv' type='file' name='calendar_csv' />
-      <%= field_error :calendar_csv, errors %>
+      <input id='calendar_csv' type='file' name='calendar_csv' required/>
     </div>
 
     <div class='form_entry' >

@@ -2,15 +2,15 @@
   <form action='/create_trello' method='post' enctype='multipart/form-data' >
     <div class='form_entry' >
       <label for='calendar_name'>Name</label>
-      <input id='calendar_name' placeholder='Trello board name' name='trello_board_name' type='text' />
+      <input id='calendar_name' placeholder='Trello board name' name='trello_board_name' type='text' required />
     </div>
     <div class='form_entry' >
       <label for='calendar_start_date'>TWU Start Date</label>
-      <input id='calendar_start_date' name='calendar_start_date' type='date' />
+      <input id='calendar_start_date' name='calendar_start_date' type='date' required />
     </div>
     <div class='form_entry' >
       <label for='csv_calendar'>CSV calendar</label>
-      <input id='csv_calendar' type='file' name='csv_calendar' />
+      <input id='csv_calendar' type='file' name='csv_calendar' required />
     </div>
     <div class='form_entry' >
       <input type='submit' value='Create Trello Board' />
