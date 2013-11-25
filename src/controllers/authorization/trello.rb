@@ -3,6 +3,7 @@ module Authorization
 
     def self.included(app)
       app.get '/grant_trello_permissions' do
+        byebug
         consumer = OAuth::Consumer.new(ENV['TRELLO_APPLICATION_KEY'], ENV['TRELLO_APPLICATION_SECRET'], {
           :site => "https://trello.com",
           :scheme => :header,
