@@ -24,6 +24,19 @@ class CalendarApiMock
 end
 
 class GoogleApiMock
+  def self.get_mock
+    @@mock
+  end
+
+  def events_inserted
+    @events_inserted.flatten
+  end
+
+  def initialize
+    @events_inserted = []
+    @@mock = self;
+  end
+ 
   def execute(*args)
     if args[0][:api_method] == "insert_calendar" then
       result = Object.new
@@ -36,6 +49,7 @@ class GoogleApiMock
     end
 
     if args[0][:api_method] == "insert_event" then
+      @events_inserted << args
       return "event_inserted"
     end
   end
