@@ -12,7 +12,7 @@ class Event
 
   def to_event_resource
     {
-      'colorId' => SessionTypes::SESSIONS[type],
+      'colorId' => SessionTypes.by_type(type).color_id,
       'start' =>  { 'dateTime' => starting_time.rfc3339 },
       'end' => { 'dateTime' => ending_time.rfc3339 },
       'description' => session_link,

@@ -2,6 +2,6 @@ Day of the Week,Time,Session,Session Link,Type,Week,Possible session type MUST b
 Friday,9:00AM till 10:30AM,Welcome to India,https://my.thoughtworks.com/docs/DOC-17148,TWU,0,"TWU, TW Basics, P3 Track, Session",,
 ,11:00AM till 12:30,Brief for Pune Tour & Admin Induction,,TWU,0,"Internal, PSIM, Dev Dojo, QA/BA Dojo",,
 ,14:30 till 15:30,Admin + Anti-Harrasment,,TWU,0,"BA Dojo, QA Dojo",,
-,15:30 till 16:00,Alcohol & Drug Guidelines,,TWU,0,,,
+,15:30 till 16:00,Alcohol & Drug Guidelines,,Session,0,,,
 ,15:30 till 17:00,Common Group Coaching Session,,TWU,0,,,
-Saturday,9:00 AM till 2 PM,Pune City Tour,,TWU,0,,,
+Saturday,9:00 AM till 2 PM,Pune City Tour,,TWU Basics,0,,,

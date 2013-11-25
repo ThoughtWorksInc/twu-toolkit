@@ -1,26 +1,34 @@
 <section id='create_trello' >
   <form action='/create_trello' method='post' enctype='multipart/form-data' >
+
     <div class='form_entry' >
       <label for='calendar_name'>Name</label>
       <input id='calendar_name' placeholder='Trello board name' name='trello_board_name' type='text' required />
     </div>
+
     <div class='form_entry' >
       <label for='calendar_start_date'>TWU Start Date</label>
       <input id='calendar_start_date' name='calendar_start_date' type='date' required />
     </div>
+
     <div class='form_entry' >
       <label for='csv_calendar'>CSV calendar</label>
       <input id='csv_calendar' type='file' name='csv_calendar' required />
     </div>
+
     <div class='form_entry' id='trello_types_options'>
       <label>Session Types to include</label>
       <% @trello_type_options.each do |option| %>
-        <input type='checkbox' name='trello_type_options[]' value='<%= option %>' ><%= option %></input></br>
+        <input type='checkbox' name='trello_type_options[]' value='<%= option.type %>' 
+          <%= "checked" if option.is_default_for_trello %>
+        ><%= option.type %></input></br>
       <% end %>
     </div>
+
     <div class='form_entry' >
       <input type='submit' value='Create Trello Board' />
     </div>
+
   </form>
 </section>
 

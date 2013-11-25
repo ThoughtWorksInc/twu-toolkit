@@ -6,7 +6,7 @@ module TrelloController
   def self.included(app)
 
     app.get '/trello' do
-      @trello_type_options = SessionTypes::SESSIONS.keys
+      @trello_type_options = SessionTypes::SESSIONS
       erb "/trello/trello".to_sym
     end
 
@@ -23,8 +23,17 @@ module TrelloController
         config.oauth_token = t.token
         config.oauth_token_secret = t.secret
       end
+
       events = EventParser.new.parse_events(calendar_csv, start_date)
-      TWUTrelloService.create(events, trello_board_name, session_types_to_include)
+
+      begin
+        TWUTrelloService.create(events, trello_board_name, session_types_to_include)
+      rescue Exception => e
+        session['trello_auth'] = nil
+        flash[:warning] = "Trello token expired, please grant permissions again"
+        redirect to('/trello')
+      end
+
       flash[:notice] = "Calendar succesfully create"
       redirect to("/")
     end
