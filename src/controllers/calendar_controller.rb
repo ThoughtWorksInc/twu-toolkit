@@ -8,7 +8,7 @@ module CalendarController
 
     app.post '/create_calendar' do
       auth_code = session[:auth_code]
-      events = EventParser.new.parse_events(params[:calendar_csv], params[:start_date])
+      events = EventParser.new.parse_events(params[:calendar_csv][:tempfile], params[:calendar_start_date])
 
       begin
         cal = GoogleCalendarService.new(auth_code)
