@@ -6,6 +6,7 @@ module TrelloController
   def self.included(app)
 
     app.get '/trello' do
+      @trello_type_options = SessionTypes::SESSIONS.keys
       erb "/trello/trello".to_sym
     end
 
@@ -14,6 +15,7 @@ module TrelloController
       calendar_csv = params['csv_calendar'][:tempfile]
       trello_board_name = params[:trello_board_name]
       start_date = params[:calendar_start_date]
+      session_types_to_include = params[:trello_type_options]
 
       Trello.configure do |config|
         config.consumer_key = t.consumer.key
@@ -22,7 +24,7 @@ module TrelloController
         config.oauth_token_secret = t.secret
       end
       events = EventParser.new.parse_events(calendar_csv, start_date)
-      TWUTrelloService.create(events, trello_board_name)
+      TWUTrelloService.create(events, trello_board_name, session_types_to_include)
       flash[:notice] = "Calendar succesfully create"
       redirect to("/")
     end

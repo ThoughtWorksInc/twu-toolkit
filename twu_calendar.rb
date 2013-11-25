@@ -5,7 +5,7 @@ require 'oauth2'
 require 'trello'
 require 'rack-flash'
 
-require 'helpers/views/form_errors_helper'
+require 'models/session_types'
 
 class TWUCalendar < Sinatra::Base
   
@@ -16,8 +16,6 @@ class TWUCalendar < Sinatra::Base
 
   Dir["src/controllers/**/*.rb"].each { |f| require File.expand_path(f) }
   
-  helpers Sinatra::FormHelpers
-
   include Authorization::Google
   include Authorization::Trello
   include CalendarController

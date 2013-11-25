@@ -12,6 +12,12 @@
       <label for='csv_calendar'>CSV calendar</label>
       <input id='csv_calendar' type='file' name='csv_calendar' required />
     </div>
+    <div class='form_entry' id='trello_types_options'>
+      <label>Session Types to include</label>
+      <% @trello_type_options.each do |option| %>
+        <input type='checkbox' name='trello_type_options[]' value='<%= option %>' ><%= option %></input></br>
+      <% end %>
+    </div>
     <div class='form_entry' >
       <input type='submit' value='Create Trello Board' />
     </div>

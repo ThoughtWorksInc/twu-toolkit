@@ -133,6 +133,22 @@ h2 { font-size: 1.3em; }
   background-color: chocolate;
 }
 
+#trello_types_options {
+  width: 400px;
+}
+
+#trello_types_options label {
+  display: block;
+  width: auto;
+  margin-bottom: 10px;
+}
+#trello_types_options input[type=checkbox] {
+  margin-right: 10px;
+  margin-bottom: 5px;
+  display: inline-block;
+  width: auto;
+}
+
 @media (max-width: 540px) {
   aside, main {
     display: block;
@@ -153,4 +169,5 @@ h2 { font-size: 1.3em; }
     text-align: center;
   }
 }
+
 
