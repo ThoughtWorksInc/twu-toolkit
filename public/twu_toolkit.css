@@ -73,6 +73,7 @@ main {
   display: inline-block;
   vertical-align: top;
   padding: 10px 10px 0px 20px;
+  width:70%;
 }
 
 h1, h2 {
@@ -142,11 +143,20 @@ h2 { font-size: 1.3em; }
   width: auto;
   margin-bottom: 10px;
 }
+
 #trello_types_options input[type=checkbox] {
   margin-right: 10px;
   margin-bottom: 5px;
   display: inline-block;
   width: auto;
+}
+
+.heroku_disclaimer {
+  background-color: darkred;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
 }
 
 @media (max-width: 540px) {
