@@ -13,7 +13,7 @@ class SessionTypes
 
   SESSIONS = [
     Session.new("TWU", '1'),
-    Session.new("TWU Basics", '2', true),
+    Session.new("TW Basics", '2', true),
     Session.new("P3 Track", '3'),
     Session.new("Session", '4', true),
     Session.new("Business", '5'),
@@ -22,7 +22,8 @@ class SessionTypes
     Session.new("Dev Dojo", '8'),
     Session.new("QA/BA Dojo", '9'),
     Session.new("BA Dojo", '10'), 
-    Session.new("QA Dojo", '11')
+    Session.new("QA Dojo", '11'),
+    Session.new("Dev/QA/BA Dojo", '12')
   ]
 
   def self.find_by_session_types session_types_to_fetch
