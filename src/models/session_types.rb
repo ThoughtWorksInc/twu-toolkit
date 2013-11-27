@@ -30,6 +30,7 @@ class SessionTypes
     Session.new("BA Dojo", '10'), 
     Session.new("QA Dojo", '11'),
     Session.new("Dev/QA/BA Dojo", '12')
+    Session.new("Dev/QA Dojo", '13')
   ]
 
   def self.find_by_session_types session_types_to_fetch
