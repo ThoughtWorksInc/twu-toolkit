@@ -12,15 +12,22 @@ module CalendarController
 
       begin
         cal = GoogleCalendarService.new(auth_code)
-        calendar_id = cal.create_calendar(params[:calendar_name])
-        cal.create_events(events, calendar_id)
-        flash[:notice] = "Calendar succesfully create"
       rescue Exception => e
         puts e
         session[:auth_code] = nil
         flash[:warning] = "Google grants expired. Please grant permissions one more time."
         redirect to("/calendar")
       end
+
+      begin
+        calendar_id = cal.create_calendar(params[:calendar_name])
+        cal.create_events(events, calendar_id)
+        flash[:notice] = "Calendar succesfully create"
+      rescue Exception => e
+        flash[:warning] = e.to_s
+        redirect to("/calendar")
+      end
+
       redirect to("/")
     end
 

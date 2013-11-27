@@ -30,7 +30,7 @@ module TrelloController
         TWUTrelloService.create(events, trello_board_name, session_types_to_include)
       rescue Exception => e
         session['trello_auth'] = nil
-        flash[:warning] = "Trello token expired, please grant permissions again"
+        flash[:warning] = e.to_s
         redirect to('/trello')
       end
 

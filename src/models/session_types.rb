@@ -8,6 +8,12 @@ class SessionTypes
       @color_id = color_id
       @is_default_for_trello = is_default_for_trello if !is_default_for_trello.nil?
     end
+
+    def to_json params
+      {
+        :type => @type
+      }.to_json
+    end
   end
 
 
