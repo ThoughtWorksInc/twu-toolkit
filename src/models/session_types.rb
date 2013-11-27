@@ -41,6 +41,18 @@ class SessionTypes
     SESSIONS.find { |e| e.type == type.to_s }
   end
 
+  def self.valid_sessions
+    @@valid_sessions ||= SESSIONS.collect { |e| e.type }
+  end
+
+  def self.validate user_input_session_types
+    invalid_sessions = []
+    user_input_session_types.each do |s|
+       invalid_sessions.push(s) if !valid_sessions.include?(s) 
+    end
+    invalid_sessions
+  end
+
 end
 
 

@@ -1,0 +1,26 @@
+<% if !@errors.nil? && !@errors.empty? %>
+  <div id="errors">
+    <h2>There were validation errors:</h2>
+    <p>The sessions types in the calendar base don't match with the sessions accepted by this application.</p>
+    <div>
+      <p>Invalid session types:</p>
+      <ul>
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div></br>
+    <div>
+      <p>Valid session types are:</p>
+      <ul>
+        <% SessionTypes.valid_sessions.each do |valid| %>
+          <li><%= valid %></li>
+        <% end %>
+      </ul>
+    </div>
+    <h3>Fix your session types in the calendar csv file and try again</h3>
+    <a href='/calendar'>Try creating a calendar again</a>
+  </div>
+<% end %>
+
+

@@ -4,7 +4,6 @@ module Authorization
     def self.included(app)
       app.get '/google_register_permissions' do
         session[:auth_code] = params[:code]
-        puts session
         redirect to("/calendar")
       end
 

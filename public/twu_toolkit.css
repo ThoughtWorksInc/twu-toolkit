@@ -200,3 +200,34 @@ h2 { font-size: 1.3em; }
   height: 20px;
   float: left;
 }
+
+#errors div {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 3px;
+  background-color: darkred;
+  color: white;
+  width: 200px;
+}
+
+#errors div p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+#errors div:nth-of-type(2) {
+  background-color: darkgreen;
+  color: white;
+}
+
+#errors ul li {
+  list-style: none;
+  padding-left: 15px;
+}
+
+#errors h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

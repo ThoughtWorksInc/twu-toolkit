@@ -14,6 +14,11 @@ class TestSessionTypes < Test::Unit::TestCase
     assert_equal "TWU", session.type
   end
 
+  def test_validate
+    invalid_sessions = SessionTypes.validate(["TWU", "invalid"])
+    assert_equal "invalid", invalid_sessions.first
+  end
+
 end
 
  
