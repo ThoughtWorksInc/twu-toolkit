@@ -29,7 +29,7 @@ class SessionTypes
     Session.new("QA/BA Dojo", '9'),
     Session.new("BA Dojo", '10'), 
     Session.new("QA Dojo", '11'),
-    Session.new("Dev/QA/BA Dojo", '12')
+    Session.new("Dev/QA/BA Dojo", '12'),
     Session.new("Dev/QA Dojo", '13')
   ]
 
