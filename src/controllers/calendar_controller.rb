@@ -8,7 +8,6 @@ module CalendarController
 
     app.post '/create_calendar' do
       auth_code = session[:auth_code]
-      events = EventParser.new.parse_events(params[:calendar_csv][:tempfile], params[:calendar_start_date])
 
       begin
         cal = GoogleCalendarService.new(auth_code)
@@ -19,16 +18,39 @@ module CalendarController
         redirect to("/calendar")
       end
 
+      events = EventParser.new.parse_events(params[:calendar_csv][:tempfile], params[:calendar_start_date])
+      session[:calendar_name] = params[:calendar_name]
+      session[:events] = events
+      session[:cal] = cal
+      puts 'session after calendar'
+      puts session.inspect
+
+      redirect to('/create_calendar_hack')
+    end
+
+    app.get '/create_calendar_hack' do
+      puts session
+      events = session[:events]
+      calendar_name = session[:calendar_name]
+      cal = session[:cal]
+
       begin
-        calendar_id = cal.create_calendar(params[:calendar_name])
-        cal.create_events(events, calendar_id)
-        flash[:notice] = "Calendar succesfully create"
+        calendar_id = cal.create_calendar(calendar_name)
+        cal.create_events(events.shift(10), calendar_id)
       rescue Exception => e
         flash[:warning] = e.to_s
         redirect to("/calendar")
       end
 
-      redirect to("/")
+      if events.empty? then
+        flash[:notice] = "Calendar successfully created"
+        session[:events] = nil
+        session[:calendar_name] = nil
+        redirect to("/")
+      else
+        session[:events] = events
+        redirect to('/create_calendar_hack')
+      end
     end
 
     app.get '/calendar' do

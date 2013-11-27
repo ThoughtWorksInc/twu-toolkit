@@ -34,7 +34,7 @@ module TrelloController
         redirect to('/trello')
       end
 
-      flash[:notice] = "Calendar succesfully create"
+      flash[:notice] = "Trello Board succesfully created"
       redirect to("/")
     end
 

@@ -13,9 +13,9 @@ class TestCreateTrello < BaseTest
 
     created_cards = TrelloApiMock::Card.created_cards 
 
-    assert_equal "Alcohol & Drug Guidelines", created_cards[0][:name]
-    assert_equal "Pune City Tour", created_cards[1][:name]
-    assert_equal '! Calendar succesfully create', find(:text, '.notice').text
+    assert_equal "Intro to Feedback", created_cards[0][:name]
+    assert_equal "Life After TWU / Being a PM @ TW / Basic Professionalism", created_cards.last[:name]
+    assert_equal '! Trello Board succesfully created', find(:text, '.notice').text
   end
 
 end
