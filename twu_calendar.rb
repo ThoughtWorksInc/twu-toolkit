@@ -3,14 +3,14 @@ require 'open-uri'
 require 'oauth'
 require 'oauth2'
 require 'trello'
-require 'rack-flash'
+require 'sinatra/flash'
 
 require 'models/session_types'
 
 class TWUCalendar < Sinatra::Base
-  
-  use Rack::Session::Cookie, :secret => '123211'
-  use Rack::Flash
+
+  use Rack::Session::Pool
+  register Sinatra::Flash
 
   set :logging, true
 
