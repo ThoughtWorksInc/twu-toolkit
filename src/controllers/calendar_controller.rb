@@ -22,11 +22,14 @@ module CalendarController
       session[:calendar_name] = params[:calendar_name]
       session[:events] = events
       session[:cal] = cal
+      puts 'session after calendar'
+      puts session.inspect
 
       redirect to('/create_calendar_hack')
     end
 
     app.get '/create_calendar_hack' do
+      puts session
       events = session[:events]
       calendar_name = session[:calendar_name]
       cal = session[:cal]
