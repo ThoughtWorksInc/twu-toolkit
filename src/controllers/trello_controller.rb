@@ -6,7 +6,7 @@ module TrelloController
   def self.included(app)
 
     app.get '/trello' do
-      @trello_type_options = SessionTypes::SESSIONS
+      @trello_type_options = SessionTypes.all
       erb "/trello/trello".to_sym
     end
 

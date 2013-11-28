@@ -1,9 +1,12 @@
 require 'sinatra'
+require 'sinatra/activerecord'
+
 require 'open-uri'
 require 'oauth'
 require 'oauth2'
 require 'trello'
 require 'rack/flash'
+require 'json'
 
 require 'models/session_types'
 

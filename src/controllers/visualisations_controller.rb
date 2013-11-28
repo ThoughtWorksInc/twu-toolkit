@@ -1,4 +1,3 @@
-require 'json'
 require 'models/session_types'
 
 module VisualisationsController

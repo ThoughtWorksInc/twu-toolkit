@@ -1,5 +1,7 @@
 require 'byebug'
 
+require 'environments'
+
 Dir["src/controllers/**/*.rb"].each { |f| require File.expand_path(f) }
 
 require 'mocks/google_api_mock'

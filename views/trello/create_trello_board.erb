@@ -20,9 +20,9 @@
     <div class='form_entry' id='trello_types_options'>
       <label>Session Types to include</label>
       <% @trello_type_options.each do |option| %>
-        <input type='checkbox' name='trello_type_options[]' value='<%= option.type %>' 
+        <input type='checkbox' name='trello_type_options[]' value='<%= option.name %>' 
           <%= "checked" if option.is_default_for_trello %>
-        ><%= option.type %></input></br>
+        ><%= option.name %></input></br>
       <% end %>
     </div>
 
