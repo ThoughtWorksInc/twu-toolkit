@@ -3,7 +3,7 @@ require 'sinatra'
 require './src/models/session_types'
 
 configure :development, :production do
-  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/twu-toolkit)')
+  db = URI.parse(ENV['HEROKU_POSTGRESQL_BRONZE_URL'] || ENV['DATABASE_URL'])
   ActiveRecord::Base.establish_connection(
     :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
     :host     => db.host,
