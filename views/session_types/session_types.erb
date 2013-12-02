@@ -1,0 +1,15 @@
+<h2>Manage Session Types</h2>
+
+<h3>Session Types</h3>
+<ul id='session_types'>
+  <% @session_types.each do |session_type| %>
+  <li>
+    <span><%= session_type.name %>: <%= session_type.description %></span>
+    <a href="/session_types/<%= session_type.id %>/edit">Edit</a>
+  </li>
+  <% end %>
+</ul>
+
+<hr />
+<h3>Create new Session Type</h3>
+<%= erb '/session_types/_form'.to_sym, :locals => { :action => 'Create' } %>

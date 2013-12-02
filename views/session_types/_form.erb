@@ -1,0 +1,24 @@
+<form path='<%= @path || '/session_types' %> %>' method='POST' >
+  <div class='form_entry' >
+    <label for='session_type_name'>Name</label>
+    <input id='session_type_name' name='session_type[name]' type='text' required value="<%= @session_type.name %>" />
+  </div>
+
+  <div class='form_entry' >
+    <label for='session_type_description'>Description</label>
+    <textarea id='session_type_description' name='session_type[description]' ><%= @session_type.description %></textarea>
+  </div>
+
+  <div class='form_entry' >
+    <label for='session_type_is_default_for_trello'>Is default for Trello</label>
+    <input type='checkbox' 
+      id='session_type_is_default_for_trello' 
+      name='session_type[is_default_for_trello]' 
+      <%= 'checked' if @session_type.is_default_for_trello %>></input>
+  </div>
+
+  <div class='form_entry' >
+    <input type='submit' value='<%= action %> Session Type' />
+  </div>
+
+</form>

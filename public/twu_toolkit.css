@@ -98,6 +98,12 @@ h2 { font-size: 1.3em; }
   width: 15em;
 }
 
+.form_entry textarea {
+  border: 1px solid lightgray;
+  padding: 3px;
+  width: 15.1em;
+}
+
 .form_entry input[type=submit] {
   background-color: darkcyan;
   border: none;
@@ -231,3 +237,15 @@ h2 { font-size: 1.3em; }
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+#session_types {
+  width: 200px;
+  margin: 10px 0 20px 0;
+}
+
+#session_types li {
+  margin-left: 30px;
+}
+
+
+

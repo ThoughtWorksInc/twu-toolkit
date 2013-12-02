@@ -25,6 +25,7 @@ class TWUCalendar < Sinatra::Base
   include TrelloController
   include TwuJsonController
   include VisualisationsController
+  include SessionTypesController
 
   get '/' do
     erb :home

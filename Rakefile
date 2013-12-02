@@ -19,5 +19,15 @@ Rake::TestTask.new(:functional) do |t|
   t.verbose = true
 end
 
+Rake::TestTask.new(:integration) do |t|
+  t.libs << "test/integration"
+  t.libs << "src"
+  t.libs << "config"
+  t.pattern = "test/integration/**/test*.rb"
+  t.verbose = true
+end
+
+
 task :default => :unit
+task :all => [:unit, :integration, :functional]
 
