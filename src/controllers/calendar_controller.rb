@@ -13,9 +13,9 @@ module CalendarController
 
       user_input_sessions_types = events.collect { |e| e.type }.uniq.map(&:to_s)
       @errors = SessionTypes.validate(user_input_sessions_types)
-      if !@errors.empty? then
+      if !@errors.empty?
         flash[:warning] = 'Oops, there were errors'
-        erb ""
+        erb ''
       else
 
         begin
@@ -36,7 +36,6 @@ module CalendarController
           redirect to("/calendar")
         end
         redirect to('/')
-
       end
     end
 
