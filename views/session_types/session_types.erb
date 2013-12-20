@@ -5,7 +5,13 @@
   <% @session_types.each do |session_type| %>
   <li>
     <span><%= session_type.name %>: <%= session_type.description %></span>
+
+    <form action="/session_types/<%= session_type.id %>" method="post" >
+      <input name="_method" type="hidden" value="delete" />
+      <input type="submit" value="Delete" ></input>
+    </form>
     <a href="/session_types/<%= session_type.id %>/edit">Edit</a>
+
   </li>
   <% end %>
 </ul>

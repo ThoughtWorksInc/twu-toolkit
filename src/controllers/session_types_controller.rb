@@ -33,6 +33,16 @@ module SessionTypesController
       redirect '/session_types'
     end
 
+    app.delete '/session_types/:id' do
+      @session_type = SessionTypes.find_by_id(params[:id])
+      session_type_name = @session_type.name
+
+      @session_type.destroy!
+
+      flash[:notice] = "Session Type '#{session_type_name}' deleted successfully"
+      redirect '/session_types'
+    end
+
   end
 end      
 
