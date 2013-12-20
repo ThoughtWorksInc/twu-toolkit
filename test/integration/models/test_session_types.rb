@@ -1,4 +1,5 @@
 require 'test_helper'
+require 'securerandom'
 
 class TestSessionTypes < TwuToolkitIntegrationBase
 
@@ -37,6 +38,7 @@ class TestSessionTypes < TwuToolkitIntegrationBase
   end
 
   def test_color_assignment_no_id_is_free
+    SessionTypes.all.last.destroy!
     next_color_id = (SessionTypes.all.last.color_id.to_i + 1).to_s
 
     new_session_type = SessionTypes.create(name: 'new session', description: 'a new session', is_default_for_trello: true)
@@ -44,7 +46,15 @@ class TestSessionTypes < TwuToolkitIntegrationBase
     assert_equal next_color_id, new_session_type.color_id
   end
 
+  def test_color_id_cant_be_bigger_than_thirteen
+    while(SessionTypes.all.size < 13) do 
+      SessionTypes.create(name: SecureRandom.hex, description: SecureRandom.hex, is_default_for_trello: true) 
+    end
 
+    new_session_type = SessionTypes.create(name: 'new session', description: 'a new session', is_default_for_trello: true)
+
+    assert_equal '1', new_session_type.color_id
+  end
 
 end
 

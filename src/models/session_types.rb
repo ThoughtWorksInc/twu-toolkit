@@ -1,6 +1,9 @@
 require 'sinatra/activerecord'
 
 class SessionTypes < ActiveRecord::Base
+  MAX_NUMBER_COLOR_ID = 13
+  POSSIBLE_COLOR_ID_RANGE = (1..MAX_NUMBER_COLOR_ID).to_a
+
   before_create :assing_color_id
 
   def self.find_by_session_types session_types_to_fetch
@@ -27,9 +30,10 @@ class SessionTypes < ActiveRecord::Base
     return if !self.color_id.nil?
 
     real_color_id_range = SessionTypes.all.collect { |e| e.color_id }.map(&:to_i).sort.to_a
-    possible_color_id_range = (1..SessionTypes.all.sort_by{ |e| e.color_id.to_i }.last.color_id.to_i).to_a
 
-    self.color_id = real_color_id_range.size == possible_color_id_range.size ? (real_color_id_range.last + 1).to_s : (possible_color_id_range - real_color_id_range).first.to_s
+    free_color_ids = POSSIBLE_COLOR_ID_RANGE - real_color_id_range
+
+    self.color_id = free_color_ids.empty? ? "1" : free_color_ids.first.to_s
   end
 
 end
