@@ -259,7 +259,7 @@ h2 { font-size: 1.3em; }
   padding: 10px;
   margin-left: 30px;
   list-style: none;
-  width: 200px;
+  width: 300px;
 }
 
 #session_types li:hover {
@@ -283,7 +283,4 @@ h2 { font-size: 1.3em; }
   color: darkblue;
   cursor: pointer;
 }
-
-
-
 
